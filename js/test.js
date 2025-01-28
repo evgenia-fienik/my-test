@@ -330,8 +330,411 @@
 // profile.updatePlayTime(20);
 // console.log(profile.getInfo()); // "Marco has 320 active hours!"
 
-const scores = [61, 19, 74, 35, 92, 56];
-const ascendingScores = scores.toSorted();
+// 14 завдання
 
-console.log(scores); // [61, 19, 74, 35, 92, 56]
-console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+// const getUserNames = (users) => {
+//   return users.map((user) => user.name);
+// };
+
+// console.log(
+//   getUserNames([
+//     {
+//       name: "Moore Hensley",
+//       email: "moorehensley@indexia.com",
+//       balance: 2811,
+//     },
+//     {
+//       name: "Sharlene Bush",
+//       email: "sharlenebush@tubesys.com",
+//       balance: 3821,
+//     },
+//     {
+//       name: "Ross Vazquez",
+//       email: "rossvazquez@xinware.com",
+//       balance: 3793,
+//     },
+//     {
+//       name: "Elma Head",
+//       email: "elmahead@omatom.com",
+//       balance: 2278,
+//     },
+//     {
+//       name: "Carey Barr",
+//       email: "careybarr@nurali.com",
+//       balance: 3951,
+//     },
+//     {
+//       name: "Blackburn Dotson",
+//       email: "blackburndotson@furnigeer.com",
+//       balance: 1498,
+//     },
+//     {
+//       name: "Sheree Anthony",
+//       email: "shereeanthony@kog.com",
+//       balance: 2764,
+//     },
+//   ])
+// ); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+
+// 15 завдання
+
+// const getUsersWithFriend = (users, friendName) =>
+//   users.filter((user) =>
+//     useReducer.friends.includes(user.friends === friendName)
+//   );
+
+// const allUsers = [
+//   {
+//     name: "Moore Hensley",
+//     friends: ["Sharron Pace"],
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//   },
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//   },
+//   {
+//     name: "Carey Barr",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//   },
+// ];
+
+// console.log(getUsersWithFriend(allUsers, "Briana Decker"));
+// // [
+// //   {
+// //     name: "Sharlene Bush",
+// //     friends: ["Briana Decker", "Sharron Pace"]
+// //   },
+// //   {
+// //     name: "Sheree Anthony",
+// //     friends: ["Goldie Gentry", "Briana Decker"]
+// //   }
+// // ]
+
+// console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
+// // [
+// //   {
+// //     name: "Elma Head",
+// //     friends: ["Goldie Gentry", "Aisha Tran"]
+// //   },
+// //   {
+// //     name: "Sheree Anthony",
+// //     friends: ["Goldie Gentry", "Briana Decker"]
+// //   }
+// // ]
+
+// console.log(getUsersWithFriend(allUsers, "Adrian Cross")); // []
+
+// 16 завдання
+
+// const sortByDescendingFriendCount = (users) =>
+//   users.toSorted((a, b) => b.friends.length - a.friends.length);
+
+// console.log(
+//   sortByDescendingFriendCount([
+//     {
+//       name: "Moore Hensley",
+//       friends: ["Sharron Pace"],
+//       gender: "male",
+//     },
+//     {
+//       name: "Sharlene Bush",
+//       friends: ["Briana Decker", "Sharron Pace"],
+//       gender: "female",
+//     },
+//     {
+//       name: "Ross Vazquez",
+//       friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//       gender: "male",
+//     },
+//     {
+//       name: "Elma Head",
+//       friends: ["Goldie Gentry", "Aisha Tran"],
+//       gender: "female",
+//     },
+//     {
+//       name: "Carey Barr",
+//       friends: ["Jordan Sampson", "Eddie Strong"],
+//       gender: "male",
+//     },
+//     {
+//       name: "Blackburn Dotson",
+//       friends: ["Jacklyn Lucas", "Linda Chapman"],
+//       gender: "male",
+//     },
+//     {
+//       name: "Sheree Anthony",
+//       friends: ["Goldie Gentry", "Briana Decker"],
+//       gender: "female",
+//     },
+//   ])
+// );
+// // [
+// //   {
+// //     name: "Ross Vazquez",
+// //     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// //     gender: "male"
+// //   },
+// //   {
+// //     name: "Sharlene Bush",
+// //     friends: ["Briana Decker", "Sharron Pace"],
+// //     gender: "female"
+// //   },
+// //   {
+// //     name: "Elma Head",
+// //     friends: ["Goldie Gentry", "Aisha Tran"],
+// //     gender: "female"
+// //   },
+// //   {
+// //     name: "Carey Barr",
+// //     friends: ["Jordan Sampson", "Eddie Strong"],
+// //     gender: "male"
+// //   },
+// //   {
+// //     name: "Blackburn Dotson",
+// //     friends: ["Jacklyn Lucas", "Linda Chapman"],
+// //     gender: "male"
+// //   },
+// //   {
+// //     name: "Sheree Anthony",
+// //     friends: ["Goldie Gentry", "Briana Decker"],
+// //     gender: "female"
+// //   },
+// //   {
+// //     name: "Moore Hensley",
+// //     friends: ["Sharron Pace"],
+// //     gender: "male"
+// //   }
+// //
+
+// 17 завдання
+
+// const getTotalBalanceByGender = (users, gender) => {
+//   return users
+//     .filter((user) => user.gender === gender)
+//     .reduce((total, user) => total + user.balance, 0);
+// };
+
+// const clients = [
+//   {
+//     name: "Moore Hensley",
+//     gender: "male",
+//     balance: 2811,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     gender: "female",
+//     balance: 3821,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     gender: "male",
+//     balance: 3793,
+//   },
+//   {
+//     name: "Elma Head",
+//     gender: "female",
+//     balance: 2278,
+//   },
+//   {
+//     name: "Carey Barr",
+//     gender: "male",
+//     balance: 3951,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     gender: "male",
+//     balance: 1498,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     gender: "female",
+//     balance: 2764,
+//   },
+// ];
+
+// console.log(getTotalBalanceByGender(clients, "male")); // 12053
+
+// console.log(getTotalBalanceByGender(clients, "female")); // 8863
+
+// const countUniqueValues = (array) => {
+//   return array.filter(
+//     (element, index, array) => array.indexOf(element) === index
+//   ).length;
+// // };
+// const findObjectByKey = (objects, key, value) => {
+//   return objects.find((object) => object[key] === value);
+// };
+
+// const data = [
+//   { id: 1, name: "Alice" },
+//   { id: 2, name: "Bob" },
+//   { id: 3, name: "Charlie" },
+// ];
+
+// console.log(findObjectByKey(data, "name", "Bob")); // { id: 2, name: "Bob" }
+// console.log(findObjectByKey(data, "id", 3)); // { id: 3, name: "Charlie" }
+
+1;
+
+// const groupByProperty = (objects, property) => {
+//   return objects.reduce((acc, object) => {
+//     const key = object[property];
+//     if (!acc[key]) {
+//       acc[key] = [];
+//     }
+//     acc[key].push(object);
+//     return acc;
+//   }, {});
+// };
+
+// const data = [
+//   { id: 1, type: "fruit", name: "Apple" },
+//   { id: 2, type: "vegetable", name: "Carrot" },
+//   { id: 3, type: "fruit", name: "Banana" },
+//   { id: 4, type: "vegetable", name: "Broccoli" },
+// ];
+
+// console.log(groupByProperty(data, "type"));
+// /*
+// {
+//   fruit: [
+//     { id: 1, type: "fruit", name: "Apple" },
+//     { id: 3, type: "fruit", name: "Banana" }
+//   ],
+//   vegetable: [
+//     { id: 2, type: "vegetable", name: "Carrot" },
+//     { id: 4, type: "vegetable", name: "Broccoli" }
+//   ]
+// }
+// */
+
+// class Car {
+//   #price;
+//   static maxPrice = 50000;
+
+//   constructor(params) {
+//     if (params.price > Car.maxPrice) {
+//       console.log(
+//         `Price cannot exceed the maximum allowed value of ${Car.maxPrice}.`
+//       );
+//       this.#price = Car.maxPrice;
+//     } else {
+//       this.#price = params.price;
+//     }
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice > Car.maxPrice) {
+//       console.log(price);
+//     } else {
+//       this.#price = newPrice;
+//     }
+//   }
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+// задача на клас 1 .splise()==================================
+
+// class Storage {
+//   #items;
+//   constructor(items) {
+//     this.#items = items;
+//   }
+//   getItems() {
+//     return this.#items;
+//   }
+//   addItem(newItem) {
+//     this.#items.push(newItem);
+//   }
+//   removeItem(itemToRemove) {
+//     const deletIdex = this.#items.indexOf(itemToRemove);
+//     if (deletIdex !== -1) {
+//       this.#items.splice(deletIdex, 1);
+//     }
+//   }
+// }
+
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// storage.removeItem("Scaner");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// ==================================================================================
+
+// class StringBuilder {
+//   #value;
+//   constructor(initialValye) {
+//     this.#value = initialValye;
+//   }
+//   getValue() {
+//     return this.#value;
+//   }
+//   padEnd(str) {
+//     this.#value += str;
+//   }
+//   padStart(str) {
+//     this.#value = str += this.#value;
+//   }
+//   padBoth(str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   }
+// }
+
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+
+const book = {
+  title: "The Last Kingdom",
+  coverImage:
+    "https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg",
+};
+
+const {
+  title,
+  coverImage: bookCoverImage = "https://via.placeholder.com/640/480",
+} = book;
+
+console.log(title); // "The Last Kingdom"
+console.log(bookCoverImage); // "https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg"

@@ -116,3 +116,35 @@ body{
   text-decoration: none;
   
 }
+
+
+
+
+.info-item {
+  display: flex;
+  flex-direction: column; /* Розташування елементів у стовпчик */
+  align-items: center; /* Центрування по горизонталі */
+  gap: 10px; /* Відстань між елементами */
+  padding: 15px; /* Внутрішні відступи */
+  background-color: #f9f9f9; /* Колір фону картки */
+  border: 1px solid #ddd; /* Кордон картки */
+  border-radius: 10px; /* Згладжені кути */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легка тінь */
+  width: 300px; /* Ширина картки */
+  margin: 20px auto; /* Відступ зверху/знизу, вирівнювання по центру */
+}
+
+.info-item img {
+  max-width: 80px; /* Максимальна ширина прапора */
+  border-radius: 50%; /* Згладжені краї для прапора */
+}
+
+.info-label {
+  font-weight: bold; /* Жирний текст для лейблів */
+  color: #555; /* Темно-сірий колір */
+}
+
+.info-value {
+  font-size: 14px; /* Розмір тексту */
+  color: #333; /* Колір тексту */
+}

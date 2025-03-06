@@ -3,7 +3,8 @@ const refs = {
   infoEl: document.querySelector(".info-js"),
 };
 //============ запит на сервер =================================
-function getInfoByIp(userIp) {
+
+async function getInfoByIp(userIp) {
   const BASE_URL = "https://ip-geolocation-ipwhois-io.p.rapidapi.com";
   const END_POINT = "/json/";
   const params = new URLSearchParams({ ip: userIp });
@@ -14,24 +15,69 @@ function getInfoByIp(userIp) {
       "x-rapidapi-host": "ip-geolocation-ipwhois-io.p.rapidapi.com",
     },
   };
-  return fetch(url, options).then((res) => res.json());
+  try {
+    const res = await fetch(url, options);
+    if (!res.ok) {
+      throw new Error("Error Status: ${res.status}");
+    }
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 }
+// function getInfoByIp(userIp) {
+//   const BASE_URL = "https://ip-geolocation-ipwhois-io.p.rapidapi.com";
+//   const END_POINT = "/json/";
+//   const params = new URLSearchParams({ ip: userIp });
+//   const url = `${BASE_URL}${END_POINT}?${params}`;
+//   const options = {
+//     headers: {
+//       "x-rapidapi-key": "66f1a4fbb2msh0b15a4a3d518d49p1310abjsn0b5298d8108e",
+//       "x-rapidapi-host": "ip-geolocation-ipwhois-io.p.rapidapi.com",
+//     },
+//   };
+//   return fetch(url, options).then((res) => res.json());
+// }
 
 //============== прослуховувач подій ================================
 
-refs.formEl.addEventListener("submit", (event) => {
+refs.formEl.addEventListener("submit", async (event) => {
   event.preventDefault();
   const userIp = event.target.elements.userip.value;
-  getInfoByIp(userIp)
-    .then((data) => {
+  if (!userIp) {
+    refs.infoEl.innerHTML = "";
+  }
+  // .then((data) => {
+  //   const markup = templateIp(data);
+  //   refs.infoEl.innerHTML = markup;
+  // })
+  try {
+    const data = await getInfoByIp(userIp);
+    if (data) {
       const markup = templateIp(data);
       refs.infoEl.innerHTML = markup;
-    })
-    .catch((error) => {
-      console.error(error);
+    } else {
       refs.infoEl.innerHTML = "";
-    });
+    }
+  } catch (error) {
+    console.error(error);
+    refs.infoEl.innerHTML = "";
+  }
 });
+
+// refs.formEl.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const userIp = event.target.elements.userip.value;
+//   getInfoByIp(userIp)
+//     .then((data) => {
+//       const markup = templateIp(data);
+//       refs.infoEl.innerHTML = markup;
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//       refs.infoEl.innerHTML = "";
+//     });
+// });
 //============= рендер ==================================
 
 function templateIp({
